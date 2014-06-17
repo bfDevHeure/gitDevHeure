@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>JS Total • Exercice Knockout</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand">JS Total • Exercice Knockout</a>
+      </div>
+    </div>
+
+    <form class="form-inline">
+      <fieldset>
+        <legend>Notez votre data-binding&nbsp;!</legend>
+        <p>
+          <label>
+            Choisissez un framework
+            <select  class="span2" data-bind="options: availableFramework, optionsCaption: 'Choose framework ...', value: chosenFramework"></select>
+            </select>
+          </label>
+          <label>
+            …et affectez une note
+            <select class="span2" data-bind="options: frameworkMark, optionsCaption: 'Choose mark ...', value: chosenMark">
+            </select>
+          </label>
+        </p>
+        <p data-bind="visible: bothChosen">
+          Vous avez noté <strong data-bind="text: chosenFramework"></strong>
+          à <strong data-bind="text: chosenMark"></strong>
+        </p>
+      </fieldset>
+    </form>
+  </div>
+  <script src="js/knockout-2.1.0.js"></script>
+  <script src="js/exercise.js"></script>
+</body>
+</html>
